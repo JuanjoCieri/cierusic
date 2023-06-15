@@ -10,7 +10,7 @@ export function getLoggedUser() {
     };
     try {
       const response = await axios.get(
-        `http://localhost:3001/users/getLoggedUser`,
+        `https://cierusic-back-production.up.railway.app/users/getLoggedUser`,
         { headers: headers, withCredentials: true }
       );
       dispatch({
@@ -26,7 +26,7 @@ export function getLoggedUser() {
 export function getUserDetail(id) {
   return async (dispatch) => {
     return await axios
-      .get(`http://localhost:3001/users/getUserDetail/${id}`)
+      .get(`https://cierusic-back-production.up.railway.app/users/getUserDetail/${id}`)
       .then((json) =>
         dispatch({ type: actions.GET_GET_USER_DETAIL, payload: json.data })
       )
@@ -37,7 +37,7 @@ export function getUserDetail(id) {
 export function postUserRegister(payload) {
   return async (dispatch) => {
     return await axios
-      .post("http://localhost:3001/users/postUserRegister", payload)
+      .post("https://cierusic-back-production.up.railway.app/users/postUserRegister", payload)
       .then((json) =>
         dispatch({ type: actions.POST_POST_USER_REGISTER, payload: json.data })
       )
@@ -54,7 +54,7 @@ export function postUserLogin(payload) {
       };
 
       const response = await axios.post(
-        "http://localhost:3001/users/postUserLogin",
+        "https://cierusic-back-production.up.railway.app/users/postUserLogin",
         payload,
         {
           headers: headers,
@@ -82,7 +82,7 @@ export function postUserLogout() {
         Accept: "application/json",
       };
       const response = await axios.get(
-        "http://localhost:3001/users/postUserLogout",
+        "https://cierusic-back-production.up.railway.app/users/postUserLogout",
         {
           headers: headers,
           withCredentials: true,
@@ -102,7 +102,7 @@ export function postUserLogout() {
 export function getSearch(searchValue) {
   return async (dispatch) => {
     return await axios
-      .get(`http://localhost:3001/search?name=${searchValue}`)
+      .get(`https://cierusic-back-production.up.railway.app/search?name=${searchValue}`)
       .then((json) =>
         dispatch({ type: actions.GET_SEARCH, payload: json.data })
       )
@@ -117,7 +117,7 @@ export function getLikedUserSongs(id) {
       Accept: "application/json",
     };
     return await axios
-      .get("http://localhost:3001/songs/getLikedUserSongs/" + id, {
+      .get("https://cierusic-back-production.up.railway.app/songs/getLikedUserSongs/" + id, {
         headers: headers,
         withCredentials: true,
       })
@@ -135,7 +135,7 @@ export function getUserSongs(id) {
       Accept: "application/json",
     };
     return await axios
-      .get("http://localhost:3001/songs/getUserSongs/" + id, {
+      .get("https://cierusic-back-production.up.railway.app/songs/getUserSongs/" + id, {
         headers: headers,
         withCredentials: true,
       })
@@ -149,7 +149,7 @@ export function getUserSongs(id) {
 export function getPlaylistSongs(id) {
   return async (dispatch) => {
     return await axios
-      .get("http://localhost:3001/songs/getPlaylistSongs/" + id)
+      .get("https://cierusic-back-production.up.railway.app/songs/getPlaylistSongs/" + id)
       .then((json) =>
         dispatch({ type: actions.GET_GET_PLAYLIST_SONGS, payload: json.data })
       )
@@ -164,7 +164,7 @@ export function getUserLikedPlaylist(id) {
       Accept: "application/json",
     };
     return await axios
-      .get("http://localhost:3001/playlist/getLikedUserPlaylists", {
+      .get("https://cierusic-back-production.up.railway.app/playlist/getLikedUserPlaylists", {
         headers: headers,
         withCredentials: true,
       })
@@ -181,7 +181,7 @@ export function getUserLikedPlaylist(id) {
 export function setPlaylistSongs(id) {
   return async (dispatch) => {
     return await axios
-      .get("http://localhost:3001/songs/getPlaylistSongs/" + id)
+      .get("https://cierusic-back-production.up.railway.app/songs/getPlaylistSongs/" + id)
       .then((json) =>
         dispatch({ type: actions.SET_PLAYLIST_SONGS, payload: json.data })
       )
@@ -193,7 +193,7 @@ export function postSong(formData) {
   return async (dispatch) => {
     return new Promise((resolve, reject) => {
       axios
-        .post("http://localhost:3001/songs/postSong", formData)
+        .post("https://cierusic-back-production.up.railway.app/songs/postSong", formData)
         .then((json) => {
           dispatch({ type: actions.POST_POST_SONG, payload: json.data });
           resolve();
@@ -210,7 +210,7 @@ export function postImage(archivo) {
   return async function (dispatch) {
     try {
       let json = await axios.post(
-        `http://localhost:3001/cloud/upload`,
+        `https://cierusic-back-production.up.railway.app/cloud/upload`,
         archivo
       );
       return dispatch({
@@ -226,7 +226,7 @@ export function postImage(archivo) {
 export function postLikeSong(payload) {
   return async (dispatch) => {
     return await axios
-      .post("http://localhost:3001/songs/likeSong", payload)
+      .post("https://cierusic-back-production.up.railway.app/songs/likeSong", payload)
       .then((json) =>
         dispatch({ type: actions.POST_POST_LIKE_SONG, payload: json.data })
       )
@@ -237,7 +237,7 @@ export function postLikeSong(payload) {
 export function postCommentSong(payload) {
   return async (dispatch) => {
     return await axios
-      .post("http://localhost:3001/songs/postCommentSong", payload)
+      .post("https://cierusic-back-production.up.railway.app/songs/postCommentSong", payload)
       .then((json) =>
         dispatch({ type: actions.POST_POST_COMMENT_SONG, payload: json.data })
       )
@@ -248,7 +248,7 @@ export function postCommentSong(payload) {
 export function postCommentPlaylist(payload) {
   return async (dispatch) => {
     return await axios
-      .post("http://localhost:3001/playlist/postCommentPlaylist", payload)
+      .post("https://cierusic-back-production.up.railway.app/playlist/postCommentPlaylist", payload)
       .then((json) =>
         dispatch({
           type: actions.POST_POST_COMMENT_PLAYLIST,
@@ -262,7 +262,7 @@ export function postCommentPlaylist(payload) {
 export function postLikePlaylist(payload) {
   return async (dispatch) => {
     return await axios
-      .post("http://localhost:3001/playlist/postLikePlaylist", payload)
+      .post("https://cierusic-back-production.up.railway.app/playlist/postLikePlaylist", payload)
       .then((json) =>
         dispatch({ type: actions.POST_POST_LIKE_PLAYLIST, payload: json.data })
       )
@@ -273,7 +273,7 @@ export function postLikePlaylist(payload) {
 export function getForYouPlaylist() {
   return async (dispatch) => {
     return await axios
-      .get("http://localhost:3001/playlist/getForYouPlaylist")
+      .get("https://cierusic-back-production.up.railway.app/playlist/getForYouPlaylist")
       .then((json) =>
         dispatch({ type: actions.GET_GET_FOR_YOU_PLAYLIST, payload: json.data })
       )
@@ -284,7 +284,7 @@ export function getForYouPlaylist() {
 export function getPlaylistDetail(id) {
   return async (dispatch) => {
     return await axios
-      .get("http://localhost:3001/playlist/getPlaylistDetail/" + id)
+      .get("https://cierusic-back-production.up.railway.app/playlist/getPlaylistDetail/" + id)
       .then((json) =>
         dispatch({ type: actions.GET_GET_PLAYLIST_DETAIL, payload: json.data })
       )
@@ -295,7 +295,7 @@ export function getPlaylistDetail(id) {
 export function postCreatePlaylist(payload) {
   return async (dispatch) => {
     return await axios
-      .post("http://localhost:3001/playlist/postCreatePlaylist", payload)
+      .post("https://cierusic-back-production.up.railway.app/playlist/postCreatePlaylist", payload)
       .then((json) =>
         dispatch({
           type: actions.POST_POST_CREATE_PLAYLIST,
@@ -309,7 +309,7 @@ export function postCreatePlaylist(payload) {
 export function postAddSongToPlaylist(payload) {
   return async (dispatch) => {
     return await axios
-      .post("http://localhost:3001/playlist/postAddSongToPlaylist", payload)
+      .post("https://cierusic-back-production.up.railway.app/playlist/postAddSongToPlaylist", payload)
       .then((json) =>
         dispatch({
           type: actions.POST_POST_ADD_SONG_TO_PLAYLIST,
@@ -323,7 +323,7 @@ export function postAddSongToPlaylist(payload) {
 export function getSongById(id) {
   return async (dispatch) => {
     return await axios
-      .get("http://localhost:3001/songs/getSongById/" + id)
+      .get("https://cierusic-back-production.up.railway.app/songs/getSongById/" + id)
       .then((json) =>
         dispatch({
           type: actions.GET_GET_SONG_BY_ID,
@@ -337,7 +337,7 @@ export function getSongById(id) {
 export function setSong(id) {
   return async (dispatch) => {
     return await axios
-      .get("http://localhost:3001/songs/getSongById/" + id)
+      .get("https://cierusic-back-production.up.railway.app/songs/getSongById/" + id)
       .then((json) =>
         dispatch({
           type: actions.SET_SONG,
