@@ -59,7 +59,6 @@ export function postUserLogin(payload) {
         {
           headers: headers,
           withCredentials: true,
-          credentials: "include",
         }
       );
       dispatch({
