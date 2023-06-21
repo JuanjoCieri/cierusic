@@ -12,14 +12,18 @@ import LoginForm from "../Forms/Login/Login";
 import RegisterForm from "../Forms/Register/Register";
 import MyPlaylist from "../Playlist/myPlaylist";
 import { postUserLogout } from "../../redux/Actions";
+import { useCookies } from "react-cookie";
 
 export default function NavBar() {
   const dispatch = useDispatch();
   const loggedUser = useSelector((state) => state.loggedUser);
   const [show, setShow] = useState(false);
+  const [cookies, setCookie] = useCookies(['res_sess']);
+
 
   function handleClick() {
     dispatch(postUserLogout());
+    setCookie('res_sess', "0", { path: '/' });
     window.location.reload("");
   }
 
