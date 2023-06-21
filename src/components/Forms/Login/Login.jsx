@@ -3,6 +3,8 @@ import { Modal, Button, Label, TextInput } from "flowbite-react";
 import { postUserLogin } from "../../../redux/Actions";
 import { useDispatch } from "react-redux";
 import { toast } from "react-hot-toast";
+import { useCookies } from 'react-cookie';
+
 
 export default function LoginForm() {
   const dispatch = useDispatch();
@@ -27,11 +29,19 @@ export default function LoginForm() {
     });
   };
 
+  const [cookies, setCookie] = useCookies(['res_sess']);
+
   function handleSubmit() {
     dispatch(postUserLogin(input)).then((response) => {
-      if (response?.payload?.error === "User does not exist") toast.error("El usuario no existe");
-      if (response?.payload?.error === "Incorrect password") toast.error("Contraseña incorrecta");
-      if (!response?.payload?.error) localStorage.setItem("res_sess", "1");
+      if (response?.payload?.error === "User does not exist")
+        toast.error("El usuario no existe");
+      if (response?.payload?.error === "Incorrect password")
+        toast.error("Contraseña incorrecta");
+      if (!response?.payload?.error) {
+        localStorage.setItem("res_sess", "1");
+        setCookie('res_sess', "1", { path: '/' });
+        window.location.reload("");
+      }
     });
   }
 
