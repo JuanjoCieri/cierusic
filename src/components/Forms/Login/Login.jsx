@@ -38,7 +38,7 @@ export default function LoginForm() {
       if (response?.payload?.error === "Incorrect password")
         toast.error("Contraseña incorrecta");
       if (!response?.payload?.error) {
-        localStorage.setItem("res_sess", "1");
+        // localStorage.setItem("res_sess", "1");
         setCookie('res_sess', "1", { path: '/' });
         window.location.reload("");
       }

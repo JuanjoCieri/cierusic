@@ -18,12 +18,11 @@ import SongPage from "./components/Song/SongPage";
 import SearchPage from "./components/Search/SearchPage";
 
 function App() {
-  // const [cookies] = useCookies(["res_sess"]);
-  const cookies = localStorage.getItem("res_sess")
+  const [cookies] = useCookies(["res_sess"]);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if (cookies === "1") {
+    if (cookies.res_sess === "1") {
       dispatch(getLoggedUser());
       dispatch(getUserLikedPlaylist())
       // dispatch(getLikedUserSongs())
