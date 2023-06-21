@@ -23,7 +23,7 @@ function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if (cookies.res_sess === "1") {
+    if (cookies === "1") {
       dispatch(getLoggedUser());
       dispatch(getUserLikedPlaylist())
       // dispatch(getLikedUserSongs())
