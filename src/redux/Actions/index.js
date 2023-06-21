@@ -89,7 +89,6 @@ export function postUserLogout() {
           credentials: "same-origin",
         }
       );
-      console.log(response)
       dispatch({
         type: actions.POST_POST_USER_LOGOUT,
         payload: response.data,

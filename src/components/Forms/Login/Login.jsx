@@ -31,7 +31,7 @@ export default function LoginForm() {
     dispatch(postUserLogin(input)).then((response) => {
       if (response?.payload?.error === "User does not exist") toast.error("El usuario no existe");
       if (response?.payload?.error === "Incorrect password") toast.error("Contraseña incorrecta");
-      if (!response?.payload?.error) console.log("logeado");
+      if (!response?.payload?.error) localStorage.setItem("res_sess", "1");
     });
   }
 

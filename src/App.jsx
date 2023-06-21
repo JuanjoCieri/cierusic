@@ -18,7 +18,8 @@ import SongPage from "./components/Song/SongPage";
 import SearchPage from "./components/Search/SearchPage";
 
 function App() {
-  const [cookies] = useCookies(["res_sess"]);
+  // const [cookies] = useCookies(["res_sess"]);
+  const cookies = localStorage.getItem("res_sess")
   const dispatch = useDispatch();
 
   useEffect(() => {
