@@ -88,7 +88,8 @@ export function postUserLogout() {
           withCredentials: true,
           credentials: "same-origin",
         }
-      ).then((response) => console.log(response, "HERE"));
+      );
+      console.log(response)
       dispatch({
         type: actions.POST_POST_USER_LOGOUT,
         payload: response.data,
