@@ -60,10 +60,9 @@ export default function PlaylistPage() {
   return (
     <>
       <Navbar />
-
-      <main className="w-screen flex flex-col justify-center items-center mt-16 mb-16 overflow-x-hidden">
-        <section className="w-screen flex flex-col justify-center items-center">
-          <div className="w-full h-52 flex justify-center items-center">
+      <main className="w-screen flex flex-col justify-center items-center mt-16 mb-16">
+        <section className="w-screen flex flex-col justify-center items-center ">
+          <div className="w-full h-52 flex justify-center items-center ">
             <img
               src={playlist?.image}
               className="h-52 w-full object-cover blur-sm"
@@ -94,7 +93,7 @@ export default function PlaylistPage() {
             </div>
           </div>
           <div className="w-full flex flex-col lg:flex-row">
-            <div className="w-full lg:w-2/3 px-5">
+            <div className="w-full lg:w-2/3 px-5 ">
               <div class="container">
                 <div class="py-8">
                   <div class="px-4 py-4 -mx-4 overflow-x-auto sm:-mx-8 sm:px-8">

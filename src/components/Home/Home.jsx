@@ -13,7 +13,7 @@ export default function Home() {
   return (
     <>
       <NavBar />
-      <main className="flex flex-col lg:justify-center lg:items-center mt-24 lg:mt-16 ">
+      <main className="flex flex-col lg:justify-center lg:items-center mt-24 lg:mt-16 mb-20">
         <section className="flex flex-col lg:flex-row items-center justify-center w-screen lg:h-screen">
           <div className="flex flex-col justify-center items-center gap-2 w-full lg:w-2/3 px-10">
             <h1

@@ -3,10 +3,14 @@ import { Link, useParams } from "react-router-dom";
 import NavBar from "../Navbar/Navbar";
 import { MapIcon, PlayIcon } from "../../utils/Emojis/emojis";
 import { useDispatch, useSelector } from "react-redux";
-import { getLikedUserSongs, getUserDetail, getUserSongs } from "../../redux/Actions";
+import {
+  getLikedUserSongs,
+  getUserDetail,
+  getUserSongs,
+} from "../../redux/Actions";
 import Upload from "../Forms/Upload/Upload";
 import Likes from "../../utils/likes/Likes";
-import AddToPlaylist from "../../utils/addToPlaylist/AddToPlaylist"
+import AddToPlaylist from "../../utils/addToPlaylist/AddToPlaylist";
 
 export default function Profile() {
   const dispatch = useDispatch();
@@ -17,10 +21,10 @@ export default function Profile() {
   useEffect(() => {
     dispatch(getUserDetail(id));
     dispatch(getLikedUserSongs(id));
-    dispatch(getUserSongs(id))
+    dispatch(getUserSongs(id));
   }, [dispatch, id]);
   const likedSongs = useSelector((state) => state.likedSongs);
-  console.log(likedSongs)
+  console.log(likedSongs);
   const userSongs = useSelector((state) => state.userSongs);
 
   if (user.length === 0) {
@@ -31,7 +35,7 @@ export default function Profile() {
     <>
       <NavBar />
       <main className="w-screen h-screen flex flex-col lg:flex-row justify-center my-32 lg:my-24">
-        <div className="w-full lg:w-2/3 px-4">
+        <div className="w-full lg:w-2/3 px-4 ">
           <div class="m-auto overflow-hidden rounded-lg shadow-lg cursor-pointer h-90 w-full">
             {/* <a href="#" class="block w-full h-full"> */}
             <img

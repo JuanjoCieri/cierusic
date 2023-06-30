@@ -21,13 +21,15 @@ function App() {
   const [cookies] = useCookies(["res_sess"]);
   const dispatch = useDispatch();
 
+  console.log(cookies)
+
   useEffect(() => {
-    if (cookies.res_sess === "1") {
+    // if (cookies.res_sess === "1") {
       dispatch(getLoggedUser());
       dispatch(getUserLikedPlaylist())
       // dispatch(getLikedUserSongs())
       // dispatch(getUserSongs())
-    }
+    // }
     dispatch(getForYouPlaylist());
   }, [dispatch]);
 

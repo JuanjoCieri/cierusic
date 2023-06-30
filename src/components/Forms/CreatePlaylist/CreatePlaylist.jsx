@@ -28,8 +28,6 @@ export default function CreatePlaylist() {
     image: "",
   });
 
-  console.log(input, "Aca");
-
   async function handleImage(e) {
     const files = e.target.files;
     const data = new FormData();
