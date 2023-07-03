@@ -59,7 +59,6 @@ export default function CreatePlaylist() {
       desc: input.desc,
       image: input.image,
     };
-    console.log(payload)
     dispatch(postCreatePlaylist(payload));
     toast.success("Playlist creada correctamente");
     window.location.reload("");

@@ -41,27 +41,3 @@ export default function UserLikes() {
   );
 }
 
-// {
-//   "date": "7 de noviembre de 2021",
-//   "image": "https://lastfm.freetls.fastly.net/i/u/ar0/92057e350d344b6acb66b62862177241.jpg",
-//   "artist": [
-//       "Modjo",
-//       "123456789"
-//   ],
-//   "name": "Lady (Here me Tonight)",
-//   "fileUrl": "https://firebasestorage.googleapis.com/v0/b/cierusi.appspot.com/o/GTA%20V%20Radio%20%5BNon-Stop-Pop-FM%5D%20Modjo%20-%20Lady%20(Here%20Me%20Tonight)%20(online-audio-converter.com).mp3?alt=media&token=fe40ddee-321d-465b-9788-064602823632",
-//   "comments": [
-//       {
-//           "date": {
-//               "_seconds": 1683636346,
-//               "_nanoseconds": 653000000
-//           },
-//           "comment": "Que temonnnn",
-//           "userId": "V7TmpVnZDxNeiz2pGsts"
-//       }
-//   ],
-//   "likes": [
-//       "E252G5nT0bn66wZy7Ruj",
-//       "V7TmpVnZDxNeiz2pGsts"
-//   ]
-// }

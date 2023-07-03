@@ -30,8 +30,6 @@ export default function AddToPlaylist({ songId }) {
     toast.success("Canción agregada correctamente!")
   };
 
-  console.log(userPlaylists)
-
   return (
     <>
       <Dropdown

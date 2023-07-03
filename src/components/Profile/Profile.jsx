@@ -24,7 +24,6 @@ export default function Profile() {
     dispatch(getUserSongs(id));
   }, [dispatch, id]);
   const likedSongs = useSelector((state) => state.likedSongs);
-  console.log(likedSongs);
   const userSongs = useSelector((state) => state.userSongs);
 
   if (user.length === 0) {

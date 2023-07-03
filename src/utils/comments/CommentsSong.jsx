@@ -47,7 +47,6 @@ export default function CommentsSong({ songId }) {
         userName: loggedUser.name,
         userImage: loggedUser.image,
       };
-      console.log(payload)
       dispatch(postCommentSong(payload));
       setInput({
         comment: ""

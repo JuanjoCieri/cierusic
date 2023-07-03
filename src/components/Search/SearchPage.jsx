@@ -7,7 +7,6 @@ import SearchPlaylist from "./SearchPlaylist";
 
 export default function SearchPage() {
   const search = useSelector((state) => state.search);
-  console.log(search);
   if (search.length === 0) {
     return <p>Cargando...</p>;
   }
