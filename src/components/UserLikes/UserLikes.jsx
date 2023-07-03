@@ -15,7 +15,7 @@ export default function UserLikes() {
   return (
     <>
       <NavBar />
-      <main className="w-screen h-screen flex flex-col justify-start items-center mt-24 mx-5">
+      <main className="w-screen h-screen flex flex-col justify-start items-center my-24 lg:mx-5">
         <p className="text-2xl text-black font-semibold">Tus me gusta</p>
         <div className="w-full mt-5 flex justify-center items-center bg-white py-10 rounded-lg shadow-xl shadow-purple-500/50 dark:shadow-xl dark:shadow-purple-800/80">
           {likedSongs && likedSongs.length === 0 ? (

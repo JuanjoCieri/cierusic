@@ -30,6 +30,8 @@ export default function AddToPlaylist({ songId }) {
     toast.success("Canción agregada correctamente!")
   };
 
+  console.log(userPlaylists)
+
   return (
     <>
       <Dropdown
@@ -46,15 +48,18 @@ export default function AddToPlaylist({ songId }) {
             </p>
           </Dropdown.Header>
           <div className="flex flex-col items-center justify-center">
+            {userPlaylists.length === 0 ? (<p className="p-2">No tienes playlist</p>) : (<>
+            
             {userPlaylists.map((playlist) => (
               <button
-                className={`py-4 my-1 w-full text-start pl-3 break-words hover:bg-gray-200 ${isSongInPlaylist(playlist) ? 'bg-green-500 text-white' : ''}`}
-                onClick={() => handleAddToPlaylist(playlist.id)}
-                key={playlist.id}
+              className={`py-4 my-1 w-full text-start pl-3 break-words hover:bg-gray-200 ${isSongInPlaylist(playlist) ? 'bg-green-500 text-white' : ''}`}
+              onClick={() => handleAddToPlaylist(playlist.id)}
+              key={playlist.id}
               >
                 {playlist.name}
               </button>
             ))}
+            </>)}
           </div>
         </div>
       </Dropdown>

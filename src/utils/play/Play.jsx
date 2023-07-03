@@ -12,7 +12,6 @@ export default function Play({ playlistId, index, song }) {
       dispatch(setPlaylistSongs(id));
     }
     if (song) {
-      console.log("je")
       dispatch(setSong(song));
     }
     localStorage.setItem("current", index);
