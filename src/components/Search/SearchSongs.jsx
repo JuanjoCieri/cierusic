@@ -43,11 +43,6 @@ export default function SearchSongs({ songs }) {
                       </div>
                     </div>
                   </td>
-                  <td class="px-5 py-5 text-sm bg-white border-b border-gray-200">
-                    <button>
-                      <PlayIcon />
-                    </button>
-                  </td>
                 </tr>
               ))}
             </tbody>
