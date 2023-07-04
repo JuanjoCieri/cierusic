@@ -124,7 +124,7 @@ export default function RegisterForm() {
           "https://assets.stickpng.com/images/585e4beacb11b227491c3399.png",
       });
       toast.success("Usuario creado con éxito");
-      navigate("/", { replace: true });
+      window.location.reload("");
     } else if (have() === "e") {
       alert("faltan datos");
     } else alert("faltan datos");

@@ -51,6 +51,7 @@ export default function CommentsSong({ songId }) {
       setInput({
         comment: ""
       })
+    toast.success("Comentario enviado!");
     }
   }
 
