@@ -48,6 +48,10 @@ export default function Comments({ playlistId }) {
         userImage: loggedUser.image,
       };
       dispatch(postCommentPlaylist(payload));
+      setInput({
+        comment: "",
+      });
+      toast.success("Comentario enviado!");
     }
   }
 
